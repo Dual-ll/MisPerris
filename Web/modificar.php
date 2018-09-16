@@ -1,5 +1,11 @@
+<?php session_start();
+if (!isset($_SESSION['usuario'])) {
+    header('Location: login.php');
+} else{
+    $usuario=$_SESSION["usuario"];
+}
+?>
 <!DOCTYPE html>
-
 <html>
     <head>
         <meta charset="UTF-8">
@@ -22,48 +28,49 @@
         ?>
         <div align='center'> 
             <form method="POST" action="modificar_perro.php" >
-                <div class="table">
+                <div class="form-group col-md-6">
                     <h1>Formulario Actualización de Perros</h1>
                     <br>
-                <table width="500px">
+
                     <tbody>
                         <tr>
-                            <td><font face="Comic Sans MS,arial,verdana" size="3" >ID:</font></td>
+                            <td><font face="Franklin Gothic Medium" size="5" >ID:</font></td>
                             <td>
-                                <input type="text" name="txtIdentificador" value="<?php echo $fila[0]?>" disabled/>
-                                <input type="hidden" name="txtId" value="<?php echo $fila[0]?>"/>
+                                <input type="text" name="txtIdentificador" class="form-control" value="<?php echo $fila[0]?>" disabled/>
+                                <input type="hidden" name="txtId" class="form-control" value="<?php echo $fila[0]?>" required/>
                             </td>
                         </tr>
                         <tr>
-                            <td><font face="Comic Sans MS,arial,verdana" size="3" >Nombre:</font></td>
+                            <td><font face="Franklin Gothic Medium" size="5" >Nombre:</font></td>
                             <td>
-                                <input type="text" name="txtNombre" value="<?php echo $fila[1]?>" />
+                                <input type="text" name="txtNombre" class="form-control" value="<?php echo $fila[1]?>" required/>
                             </td>
                         </tr>
                         <tr>
-                            <td><font face="Comic Sans MS,arial,verdana" size="3" >Raza:</font></td>
+                            <td><font face="Franklin Gothic Medium" size="5" >Raza:</font></td>
                             <td>
-                                <input type="text" name="txtRaza" value="<?php echo $fila[2]?>" />
+                                <input type="text" name="txtRaza" class="form-control" value="<?php echo $fila[2]?>" required/>
                             </td>
                         </tr>
                         <tr>
-                            <td><font face="Comic Sans MS,arial,verdana" size="3" >Edad:</font></td>
+                            <td><font face="Franklin Gothic Medium" size="5" >Edad:</font></td>
                             <td>
-                                <input type="text" name="txtEdad" value="<?php echo $fila[3]?>" />
+                                <input type="text" name="txtEdad" class="form-control" value="<?php echo $fila[3]?>" required/>
                             </td>
                         </tr>
                         <tr>
-                            <td><font face="Comic Sans MS,arial,verdana" size="3" >Tamaño:</font></td>
+                            <td><font face="Franklin Gothic Medium" size="5" >Tamaño:</font></td>
                             <td>
-                                <input type="number" min="0" max="70"
-                                       name="txtTamano" value="<?php echo $fila[4]?>" />
+                                <input type="number" min="0" max="150"
+                                       name="txtTamano" class="form-control" value="<?php echo $fila[4]?>" required/>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <input class="btn btn-primary" type="submit" value="Modificar"/>
-
-                                <input class="btn btn-primary" type="reset" value="Limpiar" />
+                                <div style="padding-top: 15px">
+                                    <input class="btn btn-dark" type="submit" value="Modificar"/>
+                                    <input class="btn btn-light" type="reset" value="Restablecer" />
+                                </div>
                             </td>                        
                         </tr>
                     </tbody>

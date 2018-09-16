@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+	header('Location: login.php');
+} else{
+	$usuario=$_SESSION["usuario"];
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,6 +26,8 @@
             <div class="form-group col-md-6">
                 <thead>
                     <tr>
+                        <br>
+                        <br>
                         <h1>Formulario de ingreso de perros<br></h1>                        
                     </tr>
                 </thead>
@@ -25,31 +35,31 @@
                    
                 <br>
                     <tr>
-                        <td><font face="Comic Sans MS,arial,verdana" size="5" >Nombre:</font></td>
+                        <td><font face="Franklin Gothic Medium" size="5" >Nombre:</font></td>
                         <td>
-                            <input placeholder="NOMBRE" class="form-control" type="text" name="txtNombre" value="" />
+                            <input placeholder="NOMBRE" class="form-control" type="text" name="txtNombre" value="" required />
                         </td>
                     </tr>
                     <br>
                     <tr>
-                        <td><font face="Comic Sans MS,arial,verdana" size="5" >Raza:</font></td>
+                        <td><font face="Franklin Gothic Medium" size="5" >Raza:</font></td>
                         <td>
-                            <input placeholder="RAZA" class="form-control" type="text" name="txtRaza" value="" />
+                            <input placeholder="RAZA" class="form-control" type="text" name="txtRaza" value="" required />
                         </td>
                     </tr>
                     <br>
                     <tr>
-                        <td><font face="Comic Sans MS,arial,verdana" size="5" >Edad (años):</font></td>
+                        <td><font face="Franklin Gothic Medium" size="5" >Edad (años):</font></td>
                         <td>
-                            <input class="form-control" type="integer" name="txtEdad" value="" placeholder="EDAD" />
+                            <input class="form-control" type="integer" name="txtEdad" value="" placeholder="EDAD" required />
                         </td>
                     </tr>
                     <br>
                     <tr>
-                        <td><font face="Comic Sans MS,arial,verdana" size="5" >Tamaño (cm):</font></td>
+                        <td><font face="Franklin Gothic Medium" size="5" >Tamaño (cm):</font></td>
                         <td>
                             <input placeholder="TAMAÑO (cm)" class="form-control" type="decimal" min="0" max="70" 
-                                   name="txtTamano" value="" />
+                                   name="txtTamano" value="" required />
                         </td>
                     </tr>
                     <br>

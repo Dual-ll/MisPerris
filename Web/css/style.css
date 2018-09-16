@@ -17,7 +17,7 @@ body{
 header{
     background-color:#33E3BA;
     color: white;
-    padding-top: 30px;
+    padding-top: 3px;
     min-height: 70px;
 }
 /*Configuracion de texto del nav*/
@@ -31,15 +31,17 @@ header a{
 
 header #marca{
     float: left;
+    vertical-align: middle;
 }
 header #marca h1{
     margin: 0;
+    vertical-align: middle;
 }
 header nav{
     float: right;
     margin-top: 1px;
     padding-right: 20px;
-    padding-top: 0px;
+    padding-top: 1.2em;
 }
 header .resaltado, header .actual a{
     color: blue;
@@ -64,10 +66,16 @@ header a:hover{
     padding: 10px;
     float: left;
     text-align: left;
+    font-size: 20px;
+    font-family: Franklin Gothic Medium;
+    color: white;    
 }
 #centro{
     text-align: right;
     display: inline-block;
+    font-size: 20px;
+    font-family: Franklin Gothic Medium;
+    color: white;    
 }
 #derecha{
     float:right;
@@ -76,11 +84,10 @@ header a:hover{
     width: 50px;
     height: 50px;
 }
-b{
+#fuente1{
     font-size: 20px;
-    font-family: cursive;
+    font-family: Franklin Gothic Medium;
     color: white;
-    font-weight: bold;
 }
 /*Segundo contenedor imagenes y texto*/
 .colorfondo2{
@@ -91,7 +98,7 @@ b{
     width: 75%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
 }
 #contenedor2 .C,#contenedor2 .D{
     display: inline-block;
@@ -116,7 +123,7 @@ b{
 }
 article p{
     font-family: Arial, Helvetica, sans-serif;
-    color: cyan;
+    color: #33B99A;
     font-weight: bold;
 }
 samp{
@@ -152,4 +159,93 @@ samp{
 /*footer*/
 footer{
     background: #D3D3D3;
+}
+
+#footP{
+    text-align: center;
+}
+
+#footH{
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+}
+
+#titulogaleria{
+    padding-left: 37%;
+    color: #ffffff;
+}
+
+#fotoR{
+  object-fit: cover;
+  object-position: 50% 0;
+  width: 200px;
+  height: 200px;    
+}
+
+#subt{
+    text-align: center;
+}
+
+#subtImg{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5px;
+}
+
+#imgcarousel{
+    width: 70%;
+    height: auto;
+}
+
+#perrisHead{
+    vertical-align: middle;
+    padding: 5px;
+}
+
+#botonC {
+    background-color: white;
+    color: black;
+    border: 2px solid #33B99A;
+    padding: 13px 28px;
+    text-align: center;
+}
+
+#botonC {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+#botonC:hover {
+    background-color: #33B99A;
+    color: black;
+}
+.modal-title{
+    color: black;
+}
+
+.modal-body{
+    color: black;
+}
+
+.navbar{
+    padding: 1.5rem 6rem;
+    padding-top: 1.5rem;
+    padding-right: 6rem;
+    padding-bottom: 1.5rem;
+    padding-left: 6rem;
+}
+
+@media (max-width:300px){
+    #contenedor2{
+        height: auto;
+    }
+    .C .D {
+        text-align: justify;
+        width: 100%;
+        float: top;
+        margin: 0;
+        padding-left: 500px;
+        clear:both;
+    }
 }
